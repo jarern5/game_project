@@ -21,6 +21,7 @@ class _GamePageState extends State<home> {
   String msg ="";
   int count = 0;
   int pic = 1;
+  var status;
   var newgame = false;
   var picture = ["1","2","3","4","5"];
   int countend = 0;
@@ -132,8 +133,9 @@ class _GamePageState extends State<home> {
         Text("$count / 3"),
         Image.asset(
           'assets/images/${pic}.jpg',
-          width: 200.0, // 160 = 1 inch
-        ),
+          width: 250.0, // 160 = 1 inch
+        ),SizedBox(height: 20.0,),
+        status==false?Icon(Icons.close,color: Colors.red,size: 20.0,):SizedBox.shrink()
       ],
     ):Column(
       children: [
@@ -141,8 +143,9 @@ class _GamePageState extends State<home> {
         Text("$count / 3"),
         Image.asset(
           'assets/images/${pic}.jpg',
-          width: 200.0, // 160 = 1 inch
-        ),
+          width: 250.0, // 160 = 1 inch
+        ),SizedBox(height: 20.0),
+        status==false?Icon(Icons.close,color: Colors.red,size: 20.0,):SizedBox.shrink(),
         //Text(data!,style: TextStyle(fontSize: 30.0),),
        // Text(feedback!,style: TextStyle(fontSize: 20.0),),
 
@@ -218,6 +221,7 @@ class _GamePageState extends State<home> {
                           count = 0;
                           pic++;
                           countend++;
+                          status = true;
 
                         }
                         data = _controller.text;
@@ -229,8 +233,10 @@ class _GamePageState extends State<home> {
                           count = 0;
                           home.cscore++;
                           countend++;
-
+                          status = true;
                           print("goooooooooooooooooooood");
+                        }else{
+                          status = false;
                         }
                         if(countend == 5){
                           Navigator.pushNamed(context, ScorePage.routeName);
