@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:game_project/game.dart';
+import 'package:game_project/score_page.dart';
 
 
 
 class home extends StatefulWidget {
+  static const routeName = '/home';
   const home({Key? key}) : super(key: key);
-
+  static var cscore = 0;
   @override
   _GamePageState createState() => _GamePageState();
 }
@@ -17,7 +19,11 @@ class _GamePageState extends State<home> {
   String? feedback = "";
   String title = "GOOD JOB!!!";
   String msg ="";
+  int count = 0;
+  int pic = 1;
   var newgame = false;
+  var picture = ["1","2","3","4","5"];
+  int countend = 0;
   final TextEditingController _controller = TextEditingController();
   @override
   void initState() {
@@ -109,7 +115,7 @@ class _GamePageState extends State<home> {
           width: 240.0, // 160 = 1 inch
         ),
         Text(
-          'GUESS THE NUMBER',
+          'GUESS THE PICTURE',
 
         ),Text(
           '------------------',
@@ -120,10 +126,26 @@ class _GamePageState extends State<home> {
   }
 
   Widget _buildMainContent() {
-    return data ==null?Text("Can you guess the number between 1 to 100",style: TextStyle(color: Colors.black,fontSize: 20.0),):Column(
+    return data ==null?Column(
       children: [
-        Text(data!,style: TextStyle(fontSize: 30.0),),
-        Text(feedback!,style: TextStyle(fontSize: 20.0),),
+        Text("ภาพที่เท่าไหร่เอ่ย ?",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+        Text("$count / 3"),
+        Image.asset(
+          'assets/images/${pic}.jpg',
+          width: 200.0, // 160 = 1 inch
+        ),
+      ],
+    ):Column(
+      children: [
+        Text("ภาพที่เท่าไหร่เอ่ย ?",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+        Text("$count / 3"),
+        Image.asset(
+          'assets/images/${pic}.jpg',
+          width: 200.0, // 160 = 1 inch
+        ),
+        //Text(data!,style: TextStyle(fontSize: 30.0),),
+       // Text(feedback!,style: TextStyle(fontSize: 20.0),),
+
         feedback == 'CORRECT !!!'?_newGame():SizedBox.shrink(),
       ],
     );
@@ -186,11 +208,34 @@ class _GamePageState extends State<home> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0))),
                   child: TextButton(
                     onPressed: () {
-
+                      count++;
+                      print("$count $pic");
                       setState(() {
+                        if(pic >= 5&&count>2||countend == 5){
+                          Navigator.pushNamed(context, ScorePage.routeName);
+                        }
+                        if(count > 2){
+                          count = 0;
+                          pic++;
+                          countend++;
+
+                        }
                         data = _controller.text;
-                        var gusee = int.tryParse(data!);
-                        if(gusee != null){
+                        var gusee = data;
+                        print(gusee);
+                        print(picture[pic-1]);
+                        if(picture[pic-1] == gusee){
+                          pic++;
+                          count = 0;
+                          home.cscore++;
+                          countend++;
+
+                          print("goooooooooooooooooooood");
+                        }
+                        if(countend == 5){
+                          Navigator.pushNamed(context, ScorePage.routeName);
+                        }
+                      /*  if(gusee != null){
                           var result = _game.doGuess(gusee);
                           if(result == 0){
                             feedback = 'CORRECT !!!';
@@ -203,7 +248,7 @@ class _GamePageState extends State<home> {
                             feedback = 'IS TOO LOW';
                             msg!=""?msg = "$msg => $data":msg = "$data";
                           }
-                        }  _controller.clear();
+                        } */ _controller.clear();
 
                       });
                     },

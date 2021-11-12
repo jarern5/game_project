@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:game_project/first_page.dart';
 import 'package:game_project/home.dart';
+import 'package:game_project/score_page.dart';
 
 
 
@@ -22,12 +24,26 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: home(),
+      //home: home(),
+
+      routes: {
+        firstPage.routeName: (context) => const firstPage(),
+        home.routeName: (context) => const home(),
+        ScorePage.routeName: (context) => const ScorePage(),
+
+      },
+      initialRoute: firstPage.routeName,
     );
   }
 }
+
+
+
+
+
+
 /*
-class MyHomePage extends StatefulWidget {
+lass MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
