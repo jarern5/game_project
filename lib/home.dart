@@ -21,7 +21,7 @@ class _GamePageState extends State<home> {
   String msg ="";
   int count = 0;
   int pic = 1;
-  var status;
+  var status = true;
   var newgame = false;
   var picture = ["1","2","3","4","5"];
   int countend = 0;
@@ -212,32 +212,35 @@ class _GamePageState extends State<home> {
                   child: TextButton(
                     onPressed: () {
                       count++;
-                      print("$count $pic");
+
                       setState(() {
                         if(pic >= 5&&count>2||countend == 5){
                           Navigator.pushNamed(context, ScorePage.routeName);
                         }
-                        if(count > 2){
-                          count = 0;
-                          pic++;
-                          countend++;
-                          status = true;
 
-                        }
                         data = _controller.text;
                         var gusee = data;
-                        print(gusee);
-                        print(picture[pic-1]);
+
                         if(picture[pic-1] == gusee){
+                          status = true;
                           pic++;
                           count = 0;
                           home.cscore++;
                           countend++;
-                          status = true;
+
                           print("goooooooooooooooooooood");
-                        }else{
+                        }if(picture[pic-1] != gusee){
                           status = false;
                         }
+                        if(count > 2){
+                          status = true;
+                          count = 0;
+                          pic++;
+                          countend++;
+
+
+                        }
+                        print("$status");
                         if(countend == 5){
                           Navigator.pushNamed(context, ScorePage.routeName);
                         }
