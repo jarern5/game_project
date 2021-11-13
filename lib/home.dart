@@ -141,7 +141,7 @@ class _GamePageState extends State<home> {
       ],
     ):Column(
       children: [
-        Text("คำว่าอะไรเอ่ย ? มี ${answer[pic]} พยางค์",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+        Text("คำว่าอะไรเอ่ย ? มี ${answer[pic-1]} พยางค์",style: TextStyle(color: Colors.black,fontSize: 20.0),),
         Text("$count / 3"),
         Image.asset(
           'assets/images/${pic}.jpg',
@@ -228,6 +228,9 @@ class _GamePageState extends State<home> {
                         if(picture[pic-1] == gusee){
                           status = true;
                           pic++;
+                          if(pic>5){
+                            pic = 5;
+                          }
                           count = 0;
                           home.cscore++;
                           countend++;
@@ -238,11 +241,14 @@ class _GamePageState extends State<home> {
                           status = true;
                           count = 0;
                           pic++;
+                          if(pic>5){
+                            pic = 5;
+                          }
                           countend++;
 
 
                         }
-                        print("$status");
+                        print("$pic");
                         if(countend == 5){
                           Navigator.pushNamed(context, ScorePage.routeName);
                         }
