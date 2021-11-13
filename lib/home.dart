@@ -141,7 +141,7 @@ class _GamePageState extends State<home> {
       ],
     ):Column(
       children: [
-        Text"คำว่าอะไรเอ่ย ? มี ${answer[pic]} พยางค์",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+        Text("คำว่าอะไรเอ่ย ? มี ${answer[pic]} พยางค์",style: TextStyle(color: Colors.black,fontSize: 20.0),),
         Text("$count / 3"),
         Image.asset(
           'assets/images/${pic}.jpg',
