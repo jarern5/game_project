@@ -1,6 +1,7 @@
 
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game_project/home.dart';
 
@@ -20,9 +21,14 @@ class _ScorePageState extends State<ScorePage> {
     return Center(
       child: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("จบเกม",style: TextStyle(fontSize: 20.0, color: Colors.blue),),
             Text("คะแนนที่ได้คือ ${home.cscore}",style: TextStyle(fontSize: 20.0, color: Colors.blue),),
+            Text("เฉลย",style: TextStyle(fontSize: 20.0, color: Colors.blue),),
+            for(int i = 0;i<5;i++)
+            Text("รูปที่ ${i + 1} คือ ${home.picture[i]}",style: TextStyle(fontSize: 20.0, color: Colors.blue),),
+            SizedBox(height: 20.0,),
             OutlinedButton(
               onPressed: () {
                 // Navigator.pushReplacementNamed(context, home.routeName);

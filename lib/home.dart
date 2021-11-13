@@ -8,6 +8,7 @@ class home extends StatefulWidget {
   static const routeName = '/home';
   const home({Key? key}) : super(key: key);
   static var cscore = 0;
+  static var picture = ["กับระเบิด","เธอมีเขา","หน้าใหม่","แมวน้ำ","คำแบล็ค"];
   @override
   _GamePageState createState() => _GamePageState();
 }
@@ -23,7 +24,8 @@ class _GamePageState extends State<home> {
   int pic = 1;
   var status = true;
   var newgame = false;
-  var picture = ["1","2","3","4","5"];
+  var picture = home.picture;
+  var answer = ["3","3","2","2","2"];
   int countend = 0;
   final TextEditingController _controller = TextEditingController();
   @override
@@ -129,7 +131,7 @@ class _GamePageState extends State<home> {
   Widget _buildMainContent() {
     return data ==null?Column(
       children: [
-        Text("ภาพที่เท่าไหร่เอ่ย ?",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+        Text("คำว่าอะไรเอ่ย ? มี ${answer[pic]} พยางค์",style: TextStyle(color: Colors.black,fontSize: 20.0),),
         Text("$count / 3"),
         Image.asset(
           'assets/images/${pic}.jpg',
@@ -220,7 +222,9 @@ class _GamePageState extends State<home> {
 
                         data = _controller.text;
                         var gusee = data;
-
+                        if(picture[pic-1] != gusee){
+                          status = false;
+                        }
                         if(picture[pic-1] == gusee){
                           status = true;
                           pic++;
@@ -229,8 +233,6 @@ class _GamePageState extends State<home> {
                           countend++;
 
                           print("goooooooooooooooooooood");
-                        }if(picture[pic-1] != gusee){
-                          status = false;
                         }
                         if(count > 2){
                           status = true;

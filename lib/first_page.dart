@@ -19,9 +19,9 @@ class firstPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _buildHeader(),
-                      Container(child: Text("เกมส์ทายภาพ",style: TextStyle(fontSize: 50.0),)),
+                      Container(child: Text("เกมส์ทายคำจากภาพ",style: TextStyle(fontSize: 50.0),)),
                       Container(child: Text("กติกา            ",style: TextStyle(fontSize: 30.0),)),
-                      Container(child: Text("        1.ให้ตอบว่าภาพที่เห็นคือภาพที่เท่าไหร่")),
+                      Container(child: Text("     1.ให้ตอบว่าภาพที่เห็นคือคำว่าอะไร")),
                       Container(child: Text("2.สามารถตอบได้ภาพละ 3 ครั้ง")),
                       SizedBox(height: 20,),
                       OutlinedButton(
