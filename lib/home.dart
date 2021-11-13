@@ -193,7 +193,7 @@ class _GamePageState extends State<home> {
                       focusedBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
-                      hintText: 'Enter the number here',
+                      hintText: 'Enter the answer here',
                       hintStyle: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontSize: 16.0,
