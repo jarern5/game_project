@@ -57161,17 +57161,17 @@ D.aaw()},
 m(a){this.bp(0)},
 X5(){var s=null
 return new T.fm(C.jx,B.a6W(L.ci("new game",s,s,s,A.dk(s,s,C.b5,s,s,s,s,s,s,s,s,20,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),new Y.a0y(this)),s)},
-Z(a,b){var s,r,q,p,o,n=this,m=null,l=t.p,k=T.j5(H.a([U.QW("assets/images/logo_number.png",240),L.ci("GUESS THE PICTURE",m,m,m,m,m,m),L.ci("------------------",m,m,m,m,m,m)],l),C.bA,C.aD)
-if(n.e==null){s=L.ci("\u0e04\u0e33\u0e27\u0e48\u0e32\u0e2d\u0e30\u0e44\u0e23\u0e40\u0e2d\u0e48\u0e22 ? \u0e21\u0e35 "+n.cy[n.z]+" \u0e1e\u0e22\u0e32\u0e07\u0e04\u0e4c",m,m,m,A.dk(m,m,C.o,m,m,m,m,m,m,m,m,20,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m)
-r=L.ci(""+n.y+" / 3",m,m,m,m,m,m)
-q=U.QW("assets/images/"+n.z+".jpg",250)
-p=T.lE(m,20,m)
-s=T.j5(H.a([s,r,q,p,!n.Q?L.aaB(C.jL,C.p5,20):T.WN()],l),C.bA,C.aD)}else{s=L.ci("\u0e20\u0e32\u0e1e\u0e17\u0e35\u0e48\u0e40\u0e17\u0e48\u0e32\u0e44\u0e2b\u0e23\u0e48\u0e40\u0e2d\u0e48\u0e22 ?",m,m,m,A.dk(m,m,C.o,m,m,m,m,m,m,m,m,20,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m)
-r=L.ci(""+n.y+" / 3",m,m,m,m,m,m)
-q=U.QW("assets/images/"+n.z+".jpg",250)
-p=T.lE(m,20,m)
-o=!n.Q?L.aaB(C.jL,C.p5,20):T.WN()
-s=T.j5(H.a([s,r,q,p,o,n.f==="CORRECT !!!"?n.X5():T.WN()],l),C.bA,C.aD)}return M.abL(M.dJ(m,Q.am5(new T.fm(C.A6,T.j5(H.a([k,s,T.WN(),n.S8()],l),C.p_,C.aD),m),!0),C.fs,m,m,m,m,m))},
+Z(a,b){var s,r,q=this,p=null,o="\u0e04\u0e33\u0e27\u0e48\u0e32\u0e2d\u0e30\u0e44\u0e23\u0e40\u0e2d\u0e48\u0e22 ? \u0e21\u0e35 ",n=t.p,m=T.j5(H.a([U.QW("assets/images/logo_number.png",240),L.ci("GUESS THE PICTURE",p,p,p,p,p,p),L.ci("------------------",p,p,p,p,p,p)],n),C.bA,C.aD),l=q.e,k=q.cy,j=q.z
+if(l==null){l=L.ci(o+k[j]+" \u0e1e\u0e22\u0e32\u0e07\u0e04\u0e4c",p,p,p,A.dk(p,p,C.o,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p,p,p),p,p)
+k=L.ci(""+q.y+" / 3",p,p,p,p,p,p)
+j=U.QW("assets/images/"+q.z+".jpg",250)
+s=T.lE(p,20,p)
+l=T.j5(H.a([l,k,j,s,!q.Q?L.aaB(C.jL,C.p5,20):T.WN()],n),C.bA,C.aD)}else{l=L.ci(o+k[j-1]+" \u0e1e\u0e22\u0e32\u0e07\u0e04\u0e4c",p,p,p,A.dk(p,p,C.o,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p,p,p),p,p)
+k=L.ci(""+q.y+" / 3",p,p,p,p,p,p)
+j=U.QW("assets/images/"+q.z+".jpg",250)
+s=T.lE(p,20,p)
+r=!q.Q?L.aaB(C.jL,C.p5,20):T.WN()
+l=T.j5(H.a([l,k,j,s,r,q.f==="CORRECT !!!"?q.X5():T.WN()],n),C.bA,C.aD)}return M.abL(M.dJ(p,Q.am5(new T.fm(C.A6,T.j5(H.a([m,l,T.WN(),q.S8()],n),C.p_,C.aD),p),!0),C.fs,p,p,p,p,p))},
 S8(){var s=null,r=L.ci("------------------",s,s,s,s,s,s),q=L.aaH(s,s,s,new V.aU(10,10,10,10),s,s,s,s,!0,new F.fF(C.du,new Y.cw(P.ai(0,255,255,255),1,C.T)),s,s,s,s,s,s,s,s,s,C.Ld,s,s,s,s,s,A.dk(s,s,P.ai(C.d.aL(127.5),255,255,255),s,s,s,s,s,s,s,s,16,s,s,s,s,!0,s,s,s,s,s,s,s,s),"Enter the answer here",s,s,s,!1,!0,s,s,s,s,s,s,s,s,s,s,s,s,s,s),p=K.ajs(new P.bB(10,10)),o=t.p
 return T.j5(H.a([r,M.dJ(s,T.abH(H.a([new T.Aj(new Z.uM(this.dx,q,C.GV,C.HM,C.bH,C.Gs,C.Gt,C.K_,C.o,s),s),M.dJ(s,M.dJ(s,U.amG(L.ci("GUESS",s,s,s,A.dk(s,s,C.l,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),new Y.a0w(this),s),s,new S.hN(s,s,s,p,s,s,C.au),s,s,s,s),C.G,s,50,s,s,80)],o),C.ej,C.aD),C.jc,s,s,s,s,s)],o),C.bA,C.aD)}}
 Y.a0y.prototype={
@@ -57199,11 +57199,14 @@ q=p.z
 r=p.cx[q-1]===r
 if(!r)p.Q=!1
 if(r){p.Q=!0
-p.z=q+1
+r=q+1
+p.z=r
+if(r>5)p.z=5
 p.y=0
 $.a4Q=$.a4Q+1;++p.db
 P.mj("goooooooooooooooooooood")}if(p.y>2){p.Q=!0
-p.y=0;++p.z;++p.db}P.mj(""+p.Q)
+p.y=0
+if(++p.z>5)p.z=5;++p.db}P.mj(""+p.z)
 if(p.db===5){p=p.c
 p.toString
 K.T9(p,"/score",t.X)}s.l2(0,C.GT)},
